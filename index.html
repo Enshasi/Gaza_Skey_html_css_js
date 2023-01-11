@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  
+    <link rel="stylesheet" href="style.css">
+      
+</head>
+<body>
+    <div id="dice">0</div>
+    <button onclick="rollDice()">Roll Dice</button>
+    <button onclick="endTurn()">End Turn</button>
+    
+    <p>Total Score: <span id="total-score">0</span></p>
+    <p>Turn Score: <span id="turn-score">0</span></p>
+    
+
+
+   <script >
+    var turnScore = 0;
+var totalScore = 0;
+var playerName = "Mohammed";
+
+function rollDice() {
+  var dice = Math.floor(Math.random() * 6) + 1;
+  document.getElementById("dice").innerHTML = dice;
+
+  if (dice === 1) {
+    turnScore = 0;
+    document.getElementById("turn-score").innerHTML = turnScore;
+    alert(playerName + " rolled a 1! Your turn score is reset to 0.");
+  } else {
+    turnScore += dice;
+    document.getElementById("turn-score").innerHTML = turnScore;
+  }
+}
+
+function endTurn() {
+  totalScore += turnScore;
+  turnScore = 0;
+  document.getElementById("turn-score").innerHTML = turnScore;
+  document.getElementById("total-score").innerHTML = totalScore;
+  playerName = (playerName === "Mohammed") ? "Fadi" : "Mohammed";
+}
+   </script>
+    
+</body>
+</html>

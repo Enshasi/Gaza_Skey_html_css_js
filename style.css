@@ -1,0 +1,10 @@
+#dice {
+    font-size: 72px;
+    font-weight: bold;
+    text-align: center;
+    border: 2px solid black;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+  }
+  
